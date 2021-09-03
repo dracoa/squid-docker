@@ -17,4 +17,4 @@ COPY example/squid.conf /etc/squid/squid.conf
 RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 3128/tcp
-ENTRYPOINT ["/sbin/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/squid", "-f", "/etc/squid/squid.conf", "-NYCd", "1"]
